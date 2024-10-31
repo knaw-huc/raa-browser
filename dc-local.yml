@@ -20,6 +20,7 @@ services:
       - 80:5000
     environment:
       ES_URI: raa-elastic
+      ES_PORT: 9200
     networks:
       - robz
 
