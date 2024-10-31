@@ -20,7 +20,6 @@ import PersonListItem from "./components/search/personListItem";
 import AanstellingListItem from "./components/search/aanstellingListItem";
 import {InstellingDetail} from "./components/details/instellingDetail";
 import PersonDetail from "./components/details/personDetail";
-import LetterDetail from "./components/details/letterDetail";
 import {Header} from "./components/pageHeader";
 import {Home} from "./components/home";
 import About from "./components/about";
@@ -30,10 +29,9 @@ const header = <Header/>
 const instellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_instelling', 20);
 const personSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_person', 20);
 const aanstellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_aanstelling', 20);
-const title = 'EMLO Browser';
+const title = 'RAA Browser';
 const instellingDetailLoader = createDetailLoader(id => BASE_URL + `/get_instelling_detail/${id}`);
 const personDetailLoader = createDetailLoader(id => BASE_URL + `/get_person_detail/${id}`);
-const letterDetailLoader = createDetailLoader(id => BASE_URL + `/get_letter_detail/${id}`);
 const routeObject: RouteObject = {
     path: '/',
     element: <App header={header}/>,
@@ -68,10 +66,6 @@ const routeObject: RouteObject = {
                              hasIndexPage={false} showSearchHeader={false} updateDocumentTitle={false}
                              searchParams={SearchParams.PARAMS} FacetsComponent={AanstellingFacets}
                              ResultItemComponent={AanstellingListItem}/>
-        }, {
-            path: '/letter_detail/:id',
-            loader: async ({params}) => letterDetailLoader(params.id as string),
-            element: <BrowserDetail title={title} updateDocumentTitle={false} DetailComponent={LetterDetail}/>
         }, {
             path: '/colofon',
             element: <About/>

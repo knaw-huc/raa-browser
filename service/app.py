@@ -31,15 +31,14 @@ def after_request(response):
     return response
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/about')
-@app.route('/letters')
-@app.route('/persons')
-@app.route('/locations')
+@app.route('/colofon')
+@app.route('/instellingen')
+@app.route('/personsonen')
+@app.route('/aanstellingen')
 def catch_all():
     return app.send_static_file("index.html")
 
-@app.route('/letter_detail/<id>')
-@app.route('/location_detail/<id>')
+@app.route('/aanstelling_detail/<id>')
 @app.route('/person_detail/<id>')
 def detail(id):
     return app.send_static_file("index.html")
