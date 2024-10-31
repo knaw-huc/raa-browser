@@ -1,0 +1,5 @@
+__pycache__
+/service/venv/
+/frontend/node_modules/
+.idea/
+
