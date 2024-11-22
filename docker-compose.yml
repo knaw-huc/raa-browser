@@ -4,6 +4,7 @@ services:
   raa-elastic:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
     container_name: raa-elastic
+    restart: unless-stopped
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -16,6 +17,7 @@ services:
   raa-app:
     image: registry.diginfra.net/tsd/raa-browser-app:0.9
     container_name: raa-app
+    restart: unless-stopped
     environment:
       ES_URI: raa-elastic
     labels:

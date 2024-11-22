@@ -19,6 +19,7 @@ export function Header() {
                     </div>
                     <div className="navi">
                         <div onClick={() => {nav('/')}}>Home</div>
+                        <div onClick={() => {nav('/inleiding')}}>Inleiding</div>
                         <div onClick={() => {nav('/personen')}}>Personen</div>
                         <div onClick={() => {nav('/aanstellingen')}}>Aanstellingen</div>
                         <div onClick={() => {nav('/instellingen')}}>Instellingen</div>

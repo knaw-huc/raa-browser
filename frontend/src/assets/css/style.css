@@ -2,9 +2,7 @@ body {
 font-size: 16px !important;
 }
 
-em {
-font-weight: bold;
-}
+
 
 .hcPageHeaderSimple {
 display: flex;
@@ -660,4 +658,22 @@ font-size: larger;
 border-top: 1px solid #eeeeee !important;
 width: 100% !important;
 opacity: 0.5;
+}
+
+.textBlob{
+display: block;
+width: 50% !important;
+}
+
+.boldParagraph{
+font-weight: bold;
+padding-top: 20px !important;
+}
+
+.boldParagraph:first-child{
+padding-top: inherit !important;
+}
+
+sup{
+padding-right: 4px;
 }

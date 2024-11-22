@@ -8,8 +8,8 @@ import math
 class Index:
     def __init__(self, config):
         self.config = config
-        self.client = Elasticsearch([{"host": self.config["url"], "port": self.config["port"]}])
-        #self.client = Elasticsearch()
+        #self.client = Elasticsearch([{"host": self.config["url"], "port": self.config["port"]}])
+        self.client = Elasticsearch()
 
     def no_case(self, str_in):
         str = str_in.strip()
@@ -39,16 +39,18 @@ class Index:
         terms = {
             "field": field + ".keyword",
             "size": amount,
-            "exclude": [""],
             "order": {
                 "_count": "desc"
             }
         }
 
+
         if facet_filter:
             filtered_filter = facet_filter.translate(str.maketrans('', '', string.punctuation))
             filtered_filter = ''.join([f"[{char.upper()}{char.lower()}]" for char in filtered_filter])
             terms["include"] = f'.*{filtered_filter}.*'
+        else:
+            terms["exclude"] = ""
 
         body = {
             "size": 0,

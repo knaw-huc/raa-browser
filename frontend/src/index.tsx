@@ -23,6 +23,7 @@ import PersonDetail from "./components/details/personDetail";
 import {Header} from "./components/pageHeader";
 import {Home} from "./components/home";
 import About from "./components/about";
+import Inleiding from "./components/inleiding";
 import {BASE_URL} from "./misc/config";
 
 const header = <Header/>
@@ -69,6 +70,9 @@ const routeObject: RouteObject = {
         }, {
             path: '/colofon',
             element: <About/>
+        },{
+            path: '/inleiding',
+            element: <Inleiding/>
         }]
 };
 

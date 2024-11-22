@@ -10,8 +10,10 @@ export function Home() {
             <div className="hcBasicSideMargin">
                 <h1>Repertorium van ambtsdragers en ambtenaren 1428-1861</h1>
                 <img className="hcParagraph" src={bakkes}/>
-                <div className="hcParagraph">Hier vindt u informatie over diplomatieke en consulaire vertegenwoordigers van de Republiek der Verenigde Nederlanden, de Bataafse Republiek en het Koninkrijk Holland in het buitenland, en over diplomatieke en consulaire vertegenwoordigers van andere landen in Nederland tijdens de jaren 1584-1810. Per vertegenwoordiger zijn gegevens opgenomen over hun carrière, familie, missie en de staf die zij daarbij tot hun beschikking hadden.
+                <div className="hcParagraph">
+                    <p>Het Repertorium van ambtsdragers en ambtenaren 1428-1861 is een online raadpleegbaar databestand met gegevens over de leden en hoogste ambtenaren van de belangrijkste instellingen van <em>vertegenwoordigende, bestuurlijke en rechtsprekende aard</em> op het huidige Nederlandse grondgebied.</p>
 
+                    <p>Dit systematische overzicht is bedoeld als algemeen naslagwerk en tevens als uitgangspunt voor analytisch onderzoek.</p>
                 </div>
             </div>
         </div>
