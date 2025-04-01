@@ -18,6 +18,13 @@ display: flex;
 align-items: center;
 }
 
+.titleFiller{
+display: inline-block;
+width: 200px;
+text-transform: lowercase;
+padding-left: 8px;
+}
+
 .hcBrand {
 display: flex;
 flex-direction: row;
@@ -29,12 +36,13 @@ margin-top: -10px;
 .hcTitle {
 display: inline-block;
 font-weight: bold;
-font-size: 24px;
+font-size: 28px;
 padding-top: 18px;
+
 }
 
 .pageHeader {
-margin-bottom: 1rem;
+margin-bottom: 0.6rem;
 background-color: #082045;
 color: #fff;
 }
@@ -424,7 +432,7 @@ text-decoration: none;
 text-transform: uppercase;
 font-weight: bold;
 font-size: 20px;
-margin: 36px 0 0 0;
+margin: 36px 0 0 -500px;
 cursor: pointer;
 }
 
@@ -471,26 +479,30 @@ justify-content: space-between;
 font-size: .9rem;
 width: 100%;
 }
-
-.hcPageHeaderSimple .navi {
+.navi {
 display: flex;
 flex-direction: row;
 align-items: baseline;
 line-height: 130%;
-height: 100px;
+height: 50px;
 margin-top: -10px;
+margin-left: 40%;
 }
-
-.hcPageHeaderSimple .navi a, .hcPageHeaderSimple .navi div {
-padding: 1.5rem 1rem;
+.navi a,  .navi div {
+padding: 0.5rem 1rem;
 display: flex;
-color: #fff;
+color: #000000;
 align-items: center;
 cursor: pointer;
 font-weight: bold;
 }
 
-.hcPageHeaderSimple .navi a:hover {
+.hoofdmenu{
+display: block;
+text-align-all: right;
+}
+
+.navi a:hover {
 background-color: rgba(255, 255, 255, 0.11);
 }
 

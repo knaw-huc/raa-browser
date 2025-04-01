@@ -16,8 +16,7 @@ CORS(app)
 
 config = {
     "url" : os.getenv("ES_URI", "http://localhost"),
-    "port" : os.getenv("ES_PORT ", "9200"),
-    "doc_type" : "sport"
+    "port" : os.getenv("ES_PORT ", "9200")
 }
 
 

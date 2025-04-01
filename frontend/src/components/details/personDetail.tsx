@@ -42,12 +42,15 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
                                 <TextFieldRow label="Geslachtsnaam" text={person.geslachtsnaam}/>
                                 <TextFieldRow label="Voornamen" text={person.voornaam}/>
                                 <TextFieldRow label="Tussenvoegsel" text={person.tussenvoegsel}/>
-                                <TextFieldRow label="Adelijke titel" text={person.adelijke_titel}/>
-                                <TextFieldRow label="Academische titel" text={person.academische_titel}/>
-                                <TextFieldRow label="Geboortedatum" text={fd(person.geboortedatum) as string }/>
+                                <TextFieldRow label="Geboren" text={fd(person.geboortedatum) as string }/>
                                 <TextFieldRow label="Geboorteplaats" text={person.geboorteplaats}/>
-                                <TextFieldRow label="Datum overlijden" text={fd(person.overlijdensdatum) as string}/>
+                                <TextFieldRow label="Overleden" text={fd(person.overlijdensdatum) as string}/>
                                 <TextFieldRow label="Plaats van overlijden" text={person.overlijdensplaats}/>
+                                <TextFieldRow label="Heer van" text={person.heerlijkheid}/>
+                                <TextFieldRow label="Adel" text={person.adel}/>
+                                <TextFieldRow label="Adelstitel" text={person.adelijke_titel}/>
+                                <TextFieldRow label="Adelspredicaat" text={person.adelspredicaat}/>
+                                <TextFieldRow label="Academische titel" text={person.academische_titel}/>
                                 <TextFieldColumn label="Opmerkingen" text={person.opmerkingen}/>
                                 <div className="detailColumnLabel hcMarginTop1">Aanstellingen</div>
                             {person.aanstellingen.length > 0 ? (

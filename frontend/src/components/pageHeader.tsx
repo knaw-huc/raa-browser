@@ -7,7 +7,7 @@ export function Header() {
     const nav = useNavigate();
     return (
         <div>
-            <div className="hcContentContainer bgColorBrand1 hcMarginBottom5">
+            <div className="hcContentContainer bgColorBrand1 hcMarginBottom1">
                 <header className="hcPageHeaderSimple hcBasicSideMargin">
                     <div className="hcBrand">
                         <div className="hcBrandLogo">
@@ -15,18 +15,22 @@ export function Header() {
                         </div>
                     </div>
                     <div className="hcSiteTitle" onClick={() => {nav('/')}}>
-                        Huygens RAA
+                        Repertorium van ambtsdragers en ambtenaren 1428-1861
+                        <div className="titleFiller"> (bètaversie)</div>
                     </div>
-                    <div className="navi">
-                        <div onClick={() => {nav('/')}}>Home</div>
-                        <div onClick={() => {nav('/inleiding')}}>Inleiding</div>
-                        <div onClick={() => {nav('/personen')}}>Personen</div>
-                        <div onClick={() => {nav('/aanstellingen')}}>Aanstellingen</div>
-                        <div onClick={() => {nav('/instellingen')}}>Instellingen</div>
-                        <div onClick={() => {nav('/colofon')}}>Colofon</div>
-                        <div><Link to='mailto:resources@huygens.knaw.nl'>Contact</Link></div>
-                    </div>
+
                 </header>
+
             </div>
+            <div className="hoofdmenu">
+            <div className="navi">
+            <div onClick={() => {nav('/')}}>Home</div>
+            <div onClick={() => {nav('/inleiding')}}>Inleiding</div>
+            <div onClick={() => {nav('/personen')}}>Personen</div>
+            <div onClick={() => {nav('/aanstellingen')}}>Aanstellingen</div>
+            <div onClick={() => {nav('/instellingen')}}>Instellingen</div>
+            <div onClick={() => {nav('/colofon')}}>Colofon</div>
+            <div><Link to='mailto:resources@huygens.knaw.nl'>Contact</Link></div>
+        </div></div>
         </div>)
 }

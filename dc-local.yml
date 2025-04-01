@@ -15,7 +15,7 @@ services:
       - robz
 
   raa-app:
-    image: registry.diginfra.net/tsd/raa-browser-app:0.9
+    image: registry.diginfra.net/tsd/raa-browser-app:0.9.3
     ports:
       - 80:5000
     environment:

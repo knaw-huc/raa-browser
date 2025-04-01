@@ -25,7 +25,11 @@ class Index:
         for item in searchvalues:
             if item["field"] == "FREE_TEXT":
                 for value in item["values"]:
-                    must_collection.append({"multi_match": {"query": value, "fields": ["*"]}})
+                    if (value.find("*") + value.find("?") == -2):
+                        must_collection.append({"multi_match": {"query": value, "fields": ["*"]}})
+                    else:
+                        must_collection.append({"wildcard": {"fulltext": {"value": value, "case_insensitive": "true"}
+                        }})
             elif item["field"] == "year" or item["field"] == "geboortejaar" or item["field"] == "overlijdensjaar" or item["field"] == "aanstellingen.beginjaar" or item["field"] == "aanstellingen.eindjaar" or item["field"] == "beginjaar" or item["field"] == "eindjaar":
                 range_values = item["values"][0]
                 r_array = range_values.split('-')
