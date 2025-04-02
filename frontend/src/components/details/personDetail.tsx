@@ -31,6 +31,7 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
         aanstellingen: []
     }
     if (OK) {person = data.items[0] as IPersonDetails;}
+    let aanstellingen = person.aanstellingen;
 
     return (
 
@@ -55,7 +56,7 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
                                 <div className="detailColumnLabel hcMarginTop1">Aanstellingen</div>
                             {person.aanstellingen.length > 0 ? (
                                 <div>
-                                    {person.aanstellingen.map((item, index) => {
+                                    {person.aanstellingen.sort((a, b) => a.beginjaar > b.beginjaar ? 1 : -1).map((item, index) => {
                                         return (<div>
                                             <PersoonAanstelling key={index} aanstelling={item}/>
                                         </div>)

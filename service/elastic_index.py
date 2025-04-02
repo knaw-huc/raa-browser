@@ -225,7 +225,7 @@ class Index:
             "query": query,
             "size": length,
             "from": start,
-            "_source": ["id", "function", "beginjaar", "eindjaar", "institution", "instelling_id", "person_name", "persoon_id", "opmerking", "locaties"],
+            "_source": ["id", "function", "beginjaar", "eindjaar", "institution", "instelling_id", "person_name", "persoon_id", "opmerkingen", "locaties"],
             "sort": [
                 {"function.keyword": {"order": "asc"}}
             ]

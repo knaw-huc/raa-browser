@@ -32,7 +32,7 @@ def after_request(response):
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/colofon')
 @app.route('/instellingen')
-@app.route('/personsonen')
+@app.route('/personen')
 @app.route('/aanstellingen')
 def catch_all():
     return app.send_static_file("index.html")
@@ -73,7 +73,7 @@ def browse_persons():
     return jsonify(ret_struc)
 
 @app.route("/browse_aanstelling",  methods=['POST', 'GET'])
-def browse_letters():
+def browse_aanstelling():
     struc = request.get_json()
     ret_struc = index.browse_aanstelling(struc["page"], struc["page_length"], struc["searchvalues"])
     return jsonify(ret_struc)

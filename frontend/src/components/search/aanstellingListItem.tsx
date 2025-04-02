@@ -42,9 +42,9 @@ export default function AanstellingListItem({item}: { item: IAanstellingResult }
             <div>
                 {item.instelling_id !== null ? (<div className="hcClickableList" onClick={() => toInstitution(item.instelling_id)}>{item.institution}</div>) : (<div>{item.institution}</div>)}
                 <div className="hcClickableList" onClick={() => toPerson(item.persoon_id)}>{item.person_name}</div>
-                <div>{item.opmerking}</div>
+                <div>{item.opmerkingen}</div>
                 <div>{item.locaties.map((loc, index) => {
-                    return (<div>{loc.naam} ({loc.soort})</div>)
+                    return (<div key={index}>{loc.naam} ({loc.soort})</div>)
                 })}</div>
             </div>
         </div>

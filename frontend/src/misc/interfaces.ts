@@ -90,7 +90,7 @@ export interface IAanstellingResult {
     instelling_id: string,
     person_name: string,
     persoon_id: string,
-    opmerking: string,
+    opmerkingen: string,
     beginjaar: string,
     eindjaar: string,
     locaties: ILocatie[]
