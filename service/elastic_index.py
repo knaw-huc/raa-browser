@@ -44,7 +44,7 @@ class Index:
             "field": field + ".keyword",
             "size": amount,
             "order": {
-                "_count": "desc"
+                "_key": "asc"
             }
         }
 

@@ -23,7 +23,7 @@ export function InstellingDetail({data}: { data: IInstellingDetailResult }) {
                             <h3>Periode</h3>
                             <div>{data.items[0].period}</div>
                             {hasFuncties && (
-                                <div><h3>Functies</h3>
+                                <div><h3>In het bestand zijn de volgende functies opgenomen:</h3>
                                     {data.items[0].functies.map(
                                         (item, index) => {
                                             return (

@@ -11,6 +11,7 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
     const OK: boolean = data.amount === 1;
     let person: IPersonDetails = {
         adel: "",
+        alias: "",
         academische_titel: "",
         adelijke_titel: "",
         adelijketitel_id: "",
@@ -44,6 +45,7 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
                                 <TextFieldRow label="Voornamen" text={person.voornaam}/>
                                 <TextFieldRow label="Tussenvoegsel" text={person.tussenvoegsel}/>
                                 <TextFieldRow label="Geboren" text={fd(person.geboortedatum) as string }/>
+                                <TextFieldRow label="Alias" text={person.alias}/>
                                 <TextFieldRow label="Geboorteplaats" text={person.geboorteplaats}/>
                                 <TextFieldRow label="Overleden" text={fd(person.overlijdensdatum) as string}/>
                                 <TextFieldRow label="Plaats van overlijden" text={person.overlijdensplaats}/>

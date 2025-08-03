@@ -24,6 +24,7 @@ export interface IFunctie {
 
 export interface IPersonDetails {
     adel: string,
+    alias: string,
     academische_titel: string,
     adelijke_titel: string,
     adelijketitel_id: string,

@@ -5,7 +5,7 @@ export default function AanstellingLocaties({locaties}: {locaties: ILocatie[]}) 
     return (<div>
         {locaties.length > 0 ? (
             <div className="detailRow">
-                <div className="detailRowLabel">Vertegenwoordiging:</div>
+                <div className="detailRowLabel">Namens:</div>
                 <div className="detailRowText">
                 {locaties.map((item, index) => {
                     return (
