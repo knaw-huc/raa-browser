@@ -30,6 +30,7 @@ export function InstellingDetail({data}: { data: IInstellingDetailResult }) {
                                                 <div key={index} className="hcClickableList" onClick={() => {
                                                     const params = {
                                                         'aanstellingen.functienaam': item.naam,
+                                                        'aanstellingen.instellingnaam': data.items[0].naam,
                                                         'page': '1'
                                                     };
                                                     nav({

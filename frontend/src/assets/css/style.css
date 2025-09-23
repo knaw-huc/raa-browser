@@ -18,6 +18,11 @@ display: flex;
 align-items: center;
 }
 
+.persDetailBronList{
+margin-top:0;
+padding-top: 0;
+}
+
 .titleFiller{
 display: inline-block;
 width: 200px;
@@ -638,6 +643,7 @@ margin-bottom: 20px;
 
 .detailRowLabel, .detailRowText {
 display: inline-block;
+max-width: 600px;
 }
 
 .detailRowLabel, .detailColumnLabel{

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TextFieldRow({label, text}: {label: string, text: string | undefined}) {
+export default function TextFieldRow({label, text}: {label: string, text: string | undefined | null}) {
     const OK: boolean = text !== undefined && text !== null && text !== "";
 
     return (

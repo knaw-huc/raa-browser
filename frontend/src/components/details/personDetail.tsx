@@ -16,6 +16,7 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
         adelijke_titel: "",
         adelijketitel_id: "",
         adelspredicaat: "",
+        bronnen: [],
         geboortejaar: "",
         geboortedatum: "",
         geboorteplaats: "",
@@ -54,6 +55,14 @@ export default function PersonDetail({data}: {data: IPersonDetailStruc}) {
                                 <TextFieldRow label="Adelstitel" text={person.adelijke_titel}/>
                                 <TextFieldRow label="Adelspredicaat" text={person.adelspredicaat}/>
                                 <TextFieldRow label="Academische titel" text={person.academische_titel}/>
+                                <div className="detailRowLabel">Bronnen:</div>
+                                {person.bronnen.length > 0 ? (<ol className="persDetailBronList">
+                                        {person.bronnen.map((item, index) => {
+                                        return (<li key={index}>{item.naam}, {item.details}</li>)
+                                    })}
+                                </ol>) : (
+                                    <div>Geen</div>
+                                )}
                                 <TextFieldColumn label="Opmerkingen" text={person.opmerkingen}/>
                                 <div className="detailColumnLabel hcMarginTop1">Aanstellingen</div>
                             {person.aanstellingen.length > 0 ? (

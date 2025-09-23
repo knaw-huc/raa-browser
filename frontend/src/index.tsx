@@ -24,9 +24,11 @@ import {Header} from "./components/pageHeader";
 import {Home} from "./components/home";
 import About from "./components/about";
 import Inleiding from "./components/inleiding";
+import {TestHeader} from "./components/search/testHeader";
 import {BASE_URL} from "./misc/config";
 
 const header = <Header/>
+const robHeader = <TestHeader/>
 const instellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_instelling', 20);
 const personSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_person', 20);
 const aanstellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_aanstelling', 20);
@@ -55,7 +57,7 @@ const routeObject: RouteObject = {
             element: <Search title={title} pageLength={30} withPaging={true}
                              hasIndexPage={false} showSearchHeader={false} updateDocumentTitle={false}
                              searchParams={SearchParams.PARAMS} FacetsComponent={PersonFacets}
-                             ResultItemComponent={PersonListItem}/>
+                             ResultItemComponent={PersonListItem} headersElement={robHeader}/>
         }, {
             path: '/person_detail/:id',
             loader: async ({params}) => personDetailLoader(params.id as string),

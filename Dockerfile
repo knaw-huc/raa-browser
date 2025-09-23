@@ -1,4 +1,4 @@
-FROM node:alpine as frontend-build
+FROM node:alpine AS frontend-build
 
 WORKDIR /app
 COPY ./frontend/ /app
@@ -6,8 +6,8 @@ RUN npm install && npm run build
 
 FROM python:3.11-slim
 
-ENV PYTHONPATH /app
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 COPY ./service/app.py /app

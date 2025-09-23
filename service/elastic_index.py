@@ -37,6 +37,7 @@ class Index:
             else:
                 for value in item["values"]:
                     must_collection.append({"match": {item["field"] + ".keyword": value}})
+            print(must_collection)
         return must_collection
 
     def get_facet(self, field, amount, facet_filter, search_values, index):

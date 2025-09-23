@@ -29,6 +29,7 @@ export interface IPersonDetails {
     adelijke_titel: string,
     adelijketitel_id: string,
     adelspredicaat: string,
+    bronnen: IPersoonBron[],
     geboortejaar: string,
     geboortedatum: string,
     geboorteplaats: string,
@@ -43,6 +44,11 @@ export interface IPersonDetails {
     tussenvoegsel: string,
     voornaam: string,
     aanstellingen: IPersonAanstelling[]
+}
+
+export interface IPersoonBron {
+    naam: string,
+    details: string
 }
 
 export interface IPersonDetailStruc {
@@ -60,6 +66,7 @@ export interface IPersonAanstelling {
     instellingnaam: string,
     functie_id: string,
     functienaam: string,
+    opmerkingen: string | null,
     locaties: ILocatie[]
 }
 
