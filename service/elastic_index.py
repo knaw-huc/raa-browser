@@ -74,8 +74,25 @@ class Index:
             }
         response = self.client.search(index=index, body=body)
 
-        return [{"key": hits["key"], "doc_count": hits["doc_count"]}
-                for hits in response["aggregations"]["names"]["buckets"]]
+        retVal = [{"key": hits["key"], "doc_count": hits["doc_count"]}
+                  for hits in response["aggregations"]["names"]["buckets"]]
+
+        if field == "aanstellingen.locaties.soort":
+            return self.soort_facet_order(retVal)
+        else:
+            return retVal
+
+    def soort_facet_order(self, lst):
+        order = ['provinciaal', 'regionaal', 'lokaal']
+        retLst = []
+        for name in order:
+            for item in lst:
+                if item["key"] == name:
+                    retLst.append(item)
+        return retLst
+
+
+
 
     def get_filter_facet(self, field, amount, facet_filter, index):
         ret_array = []
