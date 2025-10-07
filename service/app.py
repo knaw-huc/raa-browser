@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from elastic_index import Index
 import os
@@ -11,6 +11,7 @@ import os
 # }
 
 app = Flask(__name__, static_folder='browser', static_url_path='')
+app.secret_key = 'fkjhsdfljhfdll'
 
 CORS(app)
 
@@ -18,6 +19,8 @@ config = {
     "url" : os.getenv("ES_URI", "http://localhost"),
     "port" : os.getenv("ES_PORT ", "9200")
 }
+
+
 
 
 index = Index(config)
@@ -75,7 +78,11 @@ def browse_persons():
 @app.route("/browse_aanstelling",  methods=['POST', 'GET'])
 def browse_aanstelling():
     struc = request.get_json()
-    ret_struc = index.browse_aanstelling(struc["page"], struc["page_length"], struc["searchvalues"])
+    if session.get("aanstellingSortOrder"):
+        sortOrder = session.get("aanstellingSortOrder")
+    else:
+        sortOrder = 'beginjaar.keyword'
+    ret_struc = index.browse_aanstelling(struc["page"], struc["page_length"], struc["searchvalues"], sortOrder)
     return jsonify(ret_struc)
 
 @app.route("/get_instelling_detail/<id>", methods=['GET'])

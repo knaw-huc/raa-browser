@@ -223,7 +223,7 @@ class Index:
 
 
 
-    def browse_aanstelling(self, page, length, search_values):
+    def browse_aanstelling(self, page, length, search_values, sortOrder):
         int_page = int(page)
 
         start = (int_page - 1) * length
@@ -245,7 +245,7 @@ class Index:
             "from": start,
             "_source": ["id", "function", "beginjaar", "eindjaar", "institution", "instelling_id", "person_name", "persoon_id", "opmerkingen", "locaties"],
             "sort": [
-                {"function.keyword": {"order": "asc"}}
+                {sortOrder: {"order": "asc"}}
             ]
         })
 

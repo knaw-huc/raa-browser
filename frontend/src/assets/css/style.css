@@ -652,6 +652,24 @@ font-weight: bold;
 vertical-align: top;
 }
 
+.sortOrderOpt, .sortOrderOptLabel{
+display: inline-block;
+font-size: smaller;
+margin-right: 10px;
+}
+
+.sortOrderOptLabel{
+font-style: italic;
+}
+
+.sortOrderOpt{
+cursor: pointer;
+}
+
+.sortOrderOpt:hover{
+font-weight: bold;
+}
+
 .hcAanstelling{
 background-color: #eeeeee;
 border: 1px solid #999999;

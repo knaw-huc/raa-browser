@@ -1,4 +1,5 @@
 import React, {createElement} from 'react';
+import {useState} from "react";
 import ReactDOM from 'react-dom/client';
 import './assets/css/style.css';
 import {
@@ -27,11 +28,12 @@ import Inleiding from "./components/inleiding";
 import {TestHeader} from "./components/search/testHeader";
 import {BASE_URL} from "./misc/config";
 
+const aanstellingOrder ='function';
 const header = <Header/>
 const robHeader = <TestHeader/>
 const instellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_instelling', 20);
 const personSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_person', 20);
-const aanstellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_aanstelling', 20);
+const aanstellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_aanstelling', 20, 'function');
 const title = 'RAA Browser';
 const instellingDetailLoader = createDetailLoader(id => BASE_URL + `/get_instelling_detail/${id}`);
 const personDetailLoader = createDetailLoader(id => BASE_URL + `/get_person_detail/${id}`);
@@ -47,7 +49,8 @@ const routeObject: RouteObject = {
                              hasIndexPage={false} showSearchHeader={false} updateDocumentTitle={false}
                              searchParams={SearchParams.PARAMS} FacetsComponent={InstellingFacets}
                              ResultItemComponent={InstellingListItem}/>
-        }, {
+        },
+        {
             path: '/instelling_detail/:id',
             loader: async ({params}) => instellingDetailLoader(params.id as string),
             element: <BrowserDetail title={title} updateDocumentTitle={false} DetailComponent={InstellingDetail}/>
@@ -57,7 +60,7 @@ const routeObject: RouteObject = {
             element: <Search title={title} pageLength={30} withPaging={true}
                              hasIndexPage={false} showSearchHeader={false} updateDocumentTitle={false}
                              searchParams={SearchParams.PARAMS} FacetsComponent={PersonFacets}
-                             ResultItemComponent={PersonListItem} headersElement={robHeader}/>
+                             ResultItemComponent={PersonListItem}/>
         }, {
             path: '/person_detail/:id',
             loader: async ({params}) => personDetailLoader(params.id as string),
@@ -68,8 +71,9 @@ const routeObject: RouteObject = {
             element: <Search title={title} pageLength={30} withPaging={true}
                              hasIndexPage={false} showSearchHeader={false} updateDocumentTitle={false}
                              searchParams={SearchParams.PARAMS} FacetsComponent={AanstellingFacets}
-                             ResultItemComponent={AanstellingListItem}/>
-        }, {
+                             ResultItemComponent={AanstellingListItem} headersElement={robHeader}/>
+        },
+        {
             path: '/colofon',
             element: <About/>
         },{
