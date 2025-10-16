@@ -28,7 +28,6 @@ import Inleiding from "./components/inleiding";
 import {TestHeader} from "./components/search/testHeader";
 import {BASE_URL} from "./misc/config";
 
-const aanstellingOrder ='function';
 const header = <Header/>
 const robHeader = <TestHeader/>
 const instellingSearchLoader = createSearchLoader(searchUtils.getSearchObjectFromParams, BASE_URL + '/browse_instelling', 20);
